@@ -27,9 +27,9 @@ class App extends Component {
       <div className="App">
         Hello
         <button onClick={this.changeAgeHandler}>Change age</button>
-        <UserInput />
         <UserOutput name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <UserOutput name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+        <UserInput />
       </div>
     );
   }
