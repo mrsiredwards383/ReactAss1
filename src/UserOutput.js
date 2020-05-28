@@ -4,7 +4,7 @@ function UserOutput(props) {
 
     return (
     <div>
-    <p> {props.name} {props.age}</p>
+    <p onClick={props.click}> {props.name} {props.age}</p>
     </div>
     ) 
   };

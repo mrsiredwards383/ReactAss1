@@ -13,10 +13,10 @@ class App extends Component {
     ]
   }
 
-  changeAgeHandler = () => {
+  changeAgeHandler = (newName) => {
     this.setState( {
       persons: [
-        {name: 'Bella', age: 48},
+        {name: newName, age: 48},
         {name: 'William', age: 33}
       ]
     })   
@@ -26,9 +26,14 @@ class App extends Component {
     return (
       <div className="App">
         Hello
-        <button onClick={this.changeAgeHandler}>Change age</button>
-        <UserOutput name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <UserOutput name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+        <button onClick={this.changeAgeHandler.bind(this, 'bob')}>Change Name</button>
+        <UserOutput 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age} 
+          click={this.changeAgeHandler}/>
+        <UserOutput 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}/>
         <UserInput />
       </div>
     );
